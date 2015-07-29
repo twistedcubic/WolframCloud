@@ -92,6 +92,7 @@ public class WolframCloudTest{
 		String[] info2 = new String[4];
 		System.arraycopy(info, 0, info2, 0, info.length);
 		
+		//missing entries should generate errors
 		for(int i = 0; i < 4; i++){
 			//replace value with empty string
 			info2[i] = info2[i].replace(info[i], ""); 
@@ -100,6 +101,18 @@ public class WolframCloudTest{
 			System.arraycopy(info, 0, info2, 0, info.length);
 		}
 		
+		//fewer than 6 chars for password should generate an error
+		info2[info.length-1] = info2[info.length-1].replace(info[info.length-1], Integer.toString(randInt/10)); 
+		myRegistrationPage.register(info2);
+		Assert.assertTrue(driver.findElement(By.className("error")).isDisplayed());
+		
+		//email without @ should generate error
+		System.arraycopy(info, 0, info2, 0, info.length);
+		info2[0] = info2[0].replace(info2[0], "test.com"); 
+		myRegistrationPage.register(info2);
+		Assert.assertTrue(driver.findElement(By.className("error")).isDisplayed());
+		
+		//valid entries
 		try{
 			this.myHomescreen = myRegistrationPage.register(info);	
 		}catch(NoSuchElementException e){
