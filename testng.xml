@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="WolframCloudSuite" parallel="none">
+ <listeners>
+    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+  </listeners>
+  
+  <test name="TestAll">
+   <groups>
+      <run>
+	<include name="functest"/>
+	<include name="usrexptest"/>
+      </run>
+    </groups>
+    
+    <classes>
+      <class name="WolframCloudPackage.WolframCloudTest">
+      	<methods>
+      		<include name="testLaunch"/>
+      		<include name="testLogin"/>
+      		<include name="testRegistration"/>
+      		<include name="testLaunch"/>
+      		<include name="testHomescreen"/>
+      		<include name="testNotebook"/>
+      	</methods>
+      	</class>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
