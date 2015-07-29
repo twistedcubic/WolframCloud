@@ -37,6 +37,7 @@ public class WolframCloudTest{
 	
 	@AfterSuite
 	public void cleanUp() throws Exception{
+		driver.quit();
 		System.out.println("After Suite.");
 	}
 	
