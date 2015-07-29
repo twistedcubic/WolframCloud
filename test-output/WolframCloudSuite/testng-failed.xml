@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [WolframCloudSuite]" parallel="none">
+  <listeners>
+    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+  </listeners>
+  <test name="TestAll(failed)" parallel="none">
+    <groups>
+      <run>
+        <include name="functest"/>
+        <include name="usrexptest"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="WolframCloudPackage.WolframCloudTest">
+        <methods>
+          <include name="testLaunch"/>
+          <include name="testLogin"/>
+          <include name="testHomescreen"/>
+          <include name="testRegistration"/>
+          <include name="testNotebook"/>
+        </methods>
+      </class> <!-- WolframCloudPackage.WolframCloudTest -->
+    </classes>
+  </test> <!-- TestAll(failed) -->
+</suite> <!-- Failed suite [WolframCloudSuite] -->

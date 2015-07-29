@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Default test"
+           tests="5"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="29.486">
+  <properties />
+  
+  
+            <testcase name="testRegistration" time="21.201" classname="WolframCloudPackage.WolframCloudTest" />
+                <testcase name="testHomescreen" time="0.016" classname="WolframCloudPackage.WolframCloudTest" />
+                <testcase name="testLaunch" time="0.689" classname="WolframCloudPackage.WolframCloudTest" />
+                <testcase name="testLogin" time="2.159" classname="WolframCloudPackage.WolframCloudTest" />
+                <testcase name="testNotebook" time="5.421" classname="WolframCloudPackage.WolframCloudTest" />
+      
+</testsuite>
