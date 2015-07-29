@@ -17,24 +17,11 @@ public class RegistrationPage{
 		}
 		
 		//verify that all relevant fields are present
-		if(driver.findElements(By.id("email")).size() == 0)
-			throw new NoSuchElementException("Email field not present");
-		
-		if(driver.findElements(By.id("firstname")).size() == 0)
-			throw new NoSuchElementException("Firstname field not present");
-		
-		if(driver.findElements(By.id("lastname")).size() == 0)
-			throw new NoSuchElementException("Lastname field not present");
-		
-		if(driver.findElements(By.id("password")).size() == 0)
-			throw new NoSuchElementException("Password field not present");
-		
-		if(driver.findElements(By.id("password2")).size() == 0)
-			throw new NoSuchElementException("Password2 field not present");
-		
-		if(driver.findElements(By.id("signIn")).size() == 0)
-			throw new NoSuchElementException("Sign in button not present");
-		
+		String[] elements = {"email", "firstname", "lastname", "password", "password2", "signIn"};
+		for(int i = 0; i < elements.length; i++){
+			if(driver.findElements(By.id(elements[i])).size() == 0)
+				throw new NoSuchElementException(elements[i] + "field not present");
+		}
 	}
 	
 	//enters the account info
